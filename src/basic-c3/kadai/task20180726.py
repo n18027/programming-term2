@@ -1,24 +1,18 @@
 import random
-
-shake_dice = int(input("サイコロを振ってくだちい"))
-go_forword = 0
-
-while True:
-    if sum(go_forword) < 10:
-        shake_dice = random.randint(1, 6)
-        print("playerは現在" + str(shake_dice)+"マス進んでいます")
-        go_forword.append(shake_dice)
-        masu = sum(go_forword)
-        print("playerは現在" + str(masu)+"マス進んでいます")
-        if masu == go_forword:
-            print("player goal")
-            break
-    elif sum(go_forword) > 10:
-        sai = random.randint(1, 6)
-        print("playerは現在" + str(shake_dice)+"マス進んでいます")
-        go_forword.append(shake_dice)
-        masu = sum(go_forword)
-        print("playerは現在" + str(masu)+"マス進んでいます")
-        if masu == go_forword:
-            print("player goal")
-            break
+goal_pos = 10
+cur_x = 0
+def shake_dice():
+    shake_dice = random.randit(1, 6)
+    return shake_dice
+def go_forward():
+    go_forward += shake_dice
+    return go_forward
+while go_forward < goal_pos:
+    player = input("サイコロを振りなんし")
+    if player != "":
+        continue
+    if go_forward < goal_pos:
+        print("{}が出ました。現在地は{}です".format(shake_dice, go_forward))
+        continue
+    break
+print("{}が出ました。クリアー".format(shake_dice))
